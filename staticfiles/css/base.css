@@ -1,0 +1,80 @@
+#profile-picture {
+    /* border-radius: 50%; */
+    width: 200px; 
+    height: auto;
+    border: 2px #241b00;
+}
+
+#name {
+    color: white;
+    font-weight: 325;
+    font-family:'Fira Sans';
+}
+
+body {
+    background-color: grey;
+}
+
+#school {
+    color: white;
+}
+
+#major {
+    color: white;
+}
+
+#project-name {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#project-description {
+    color: grey;
+}
+
+.card {
+    background-color: #241b00;
+}
+
+.block-child {
+    display: inline-block;
+}
+
+i.bi-github:hover {
+    color: grey;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 10rem;
+    background-color: #000924;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-family:'Fira Sans';
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a.page:hover {
+    text-decoration: underline;
+}

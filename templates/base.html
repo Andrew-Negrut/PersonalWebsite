@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color: #000924;">
+
+    
+    <main>
+        <div class="sidebar"> 
+            <div class="top">
+                <div class="logo">
+        
+                </div>
+            </div>
+            <div class="user">
+        
+            </div>
+            <ul>
+                <li>
+                    <a class="page" href="{% url 'home' %}">
+                        <span class="nav-item">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="page" href="{% url 'experience' %}">
+                        <span class="nav-item">Experience</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="page" href="{% static 'pdfs/FinalCVANegrut.pdf' %}" download>
+                        <span class="nav-item">Résumé</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="page" href="{% url 'about' %}">
+                        <span class="nav-item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Andrew-Negrut" target="_blank" style="display: inline-block; margin-right: 15%">
+                        <i class="bi bi-github" style="color: white; font-size: 30px"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/andrew-negrut-97a138214/" target="_blank" style="display: inline-block;">
+                        <i class="bi bi-linkedin" style="color: white; font-size: 30px;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.page').forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('underlined');
+                }
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

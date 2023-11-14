@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col">
+            <img src="{% static 'images/IMG_1038.jpg' %}" class="img-thumbnail rounded-circle" id="profile-picture">
+        </div>
+        <div class="col-6">
+            <div class="row mb-2">
+                <h1 id="name" class="display-2">Andrew Negrut</h1>
+            </div>
+            <div class="row">
+                <h1 id="school" class="display-6">Rice University</h1>
+            </div>
+            <div class="row">
+                <h1 id="major" class="display-6">Computer Science</h1>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+    <div class="container" style="padding-left: 12rem">
+        <div class="row mt-5">
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row" style="text-align:center;"><h6 id="project-name">{{ project.name }}</h6></div>
+                            <div class="row mb-2" style="text-align:center;">
+                                {% if project.youtube_link %}
+                                <iframe src='{{ project.youtube_link }}' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                {% endif %}
+                            </div>
+                            <p style="display: inline" id="project-description">{{ project.description }}</p>
+                            <a href='{{ project.github_link }}' target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- <div class="row mt-5">
+        <div class="col-2"></div>
+        {% for project in projects %}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 id="project-name">{{ project.name }}</h6>
+                    {% if project.youtube_link %}
+                    <iframe src='{{ project.youtube_link }}' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    {% endif %}
+                    <p style="display: inline" id="project-description">{{ project.description }}</p>
+                    <a href='{{ project.github_link }}' target="_blank">View Code</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div> -->
+
+</div>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+<!-- <script>
+    const btn = document.querySelector("#btn");
+    const sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    };
+</script> -->
+
+{% endblock content %}
